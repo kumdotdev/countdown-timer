@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Demo Countdown Timer Web Component</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./countdown-timer.js" type="module"></script>
+  <script type="module">
+    const nextNewYear = (new Date((new Date().getFullYear() + 1).toString())).toISOString();
+    const oneDayPlusMinute = (new Date(new Date().valueOf() + 86_410_000)).toISOString();
+    document.querySelector('.demo-default').innerHTML = `
+      <countdown-timer alarm="60" date="${nextNewYear}"></countdown-timer>
+    `;
+    document.querySelector('.demo-alarm').innerHTML = `
+      <countdown-timer alarm="86400" date="${oneDayPlusMinute}"></countdown-timer>
+    `;
+    document.querySelector('.demo-layout').innerHTML = `
+      <countdown-timer class="my-countdown" alarm="60" date="${nextNewYear}"></countdown-timer>
+    `;
+  </script>
+</head>
+
+<body>
+  <style>
+    :root {
+      --cdt-digit-font-family: monospace;
+      --cdt-digit-text-color: var(--bg);
+      --cdt-digit-box-color: var(--text);
+    }
+
+  </style>
+  <div class="container">
+    <h1>Demo Countdown Timer Web Component</h1>
+    <section>
+      <h2>Default State</h2>
+      <p>Example date next New Year</p>
+      <p>
+      <div class="demo-default"></div>
+      </p>
+    </section>
+    <section>
+      <h2>Alarm State</h2>
+      <p>
+        Begins pulsating if only specific time left. <br>
+        In this example time left (alarm) is set to 86400 seconds (1 day).
+      </p>
+      <p>
+      <div class="demo-alarm"></div>
+      </p>
+    </section>
+    <section>
+      <h2>Finished State</h2>
+      <p>Nothing to count here.</p>
+      <p>
+        <countdown-timer alarm="60" date="2023-01-01T23:42:00.000+01:00"></countdown-timer>
+      </p>
+    </section>
+    <section>
+      <h2>Layout Example</h2>
+      <p>Sans serif font, larger font size for digits and labels, lime color on blue background. <br>Blue color
+        of the labels are inherited from parent element.</p>
+      <style>
+        .my-countdown {
+          --cdt-digit-font-size: 6rem;
+          --cdt-label-font-size: 1.25rem;
+          --cdt-digit-font-family: sans-serif;
+          --cdt-digit-text-color: lime;
+          --cdt-digit-box-color: #0077ff;
+
+          color: #0077ff;
+        }
+
+      </style>
+      <div class="demo-layout"></div>
+    </section>
+  </div>
+</body>
+
+</html>

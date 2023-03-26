@@ -1,0 +1,61 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+p {
+  margin: 0;
+}
+:root {
+  --bg: #f8f8f8;
+  --bg2: #dfdfdf;
+  --text: #333;
+}
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --bg: #2f2f30;
+    --bg2: #18191a;
+    --text: #f6f9ff;
+  }
+}
+body {
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: var(--text, black);
+  line-height: 1.5;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: linear-gradient(var(--bg, white), var(--bg2, #ddd));
+}
+button,
+select,
+textarea,
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--text);
+  padding: 1rem 1.5rem;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  background-color: var(--bg);
+  accent-color: var(--text);
+}
+.container {
+  padding: 2rem;
+}
+h1 {
+  margin-bottom: 3rem;
+}
+
+p,
+section {
+  margin-bottom: 1rem;
+}
+section {
+  padding: 3rem;
+  border: 1px solid var(--text);
+  border-radius: 4px;
+}
