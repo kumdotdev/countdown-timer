@@ -64,5 +64,3 @@ normal--cdt-digit-font-weight | Another useful values could be `400` (normal) | 
 --cdt-digit-text-color | | #fefefe
 --cdt-digit-box-color | You can set the box color to `transparent` to omit the colored digit box | #111
 --cdt-label-font-size | The font size of the label beneath the digits | 0.75rem
-
-# countdown-timer
