@@ -59,6 +59,9 @@ class CountDownTimer extends HTMLElement {
     }, 1_000);
     const style = document.createElement('style');
     style.textContent = `
+      :host {
+        display: inline-block;
+      }
       div {
         display: inline-grid;
         justify-content: center;
