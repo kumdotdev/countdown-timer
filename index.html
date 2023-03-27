@@ -2,9 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <title>Demo Countdown Timer Web Component</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./style.css" />
   <script src="./countdown-timer.js" type="module"></script>
@@ -21,9 +20,6 @@
       <countdown-timer class="my-countdown" alarm="60" date="${nextNewYear}"></countdown-timer>
     `;
   </script>
-</head>
-
-<body>
   <style>
     :root {
       --cdt-digit-font-family: monospace;
@@ -31,14 +27,27 @@
       --cdt-digit-box-color: var(--text);
     }
 
+    .my-countdown {
+      --cdt-digit-font-size: 6rem;
+      --cdt-label-font-size: 1.25rem;
+      --cdt-digit-font-family: sans-serif;
+      --cdt-digit-text-color: lime;
+      --cdt-digit-box-color: #0077ff;
+
+      color: #0077ff;
+    }
+
   </style>
+</head>
+
+<body>
   <div class="container">
     <h1>Demo Countdown Timer Web Component</h1>
     <section>
       <h2>Default State</h2>
       <p>Example date next New Year</p>
       <p>
-      <div class="demo-default"></div>
+        <span class="demo-default"></span>
       </p>
     </section>
     <section>
@@ -48,7 +57,7 @@
         In this example time left (alarm) is set to 86400 seconds (1 day).
       </p>
       <p>
-      <div class="demo-alarm"></div>
+        <span class="demo-alarm"></span>
       </p>
     </section>
     <section>
@@ -62,19 +71,9 @@
       <h2>Layout Example</h2>
       <p>Sans serif font, larger font size for digits and labels, lime color on blue background. <br>Blue color
         of the labels are inherited from parent element.</p>
-      <style>
-        .my-countdown {
-          --cdt-digit-font-size: 6rem;
-          --cdt-label-font-size: 1.25rem;
-          --cdt-digit-font-family: sans-serif;
-          --cdt-digit-text-color: lime;
-          --cdt-digit-box-color: #0077ff;
-
-          color: #0077ff;
-        }
-
-      </style>
-      <div class="demo-layout"></div>
+      <p>
+        <span class="demo-layout"></span>
+      </p>
     </section>
   </div>
 </body>
