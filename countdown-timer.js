@@ -29,7 +29,6 @@ class CountDownTimer extends HTMLElement {
   }
   constructor() {
     super();
-    this.id = Math.random();
     this.state = {
       date: new Date().toISOString(),
       alarm: '',
