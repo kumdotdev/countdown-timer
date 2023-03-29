@@ -39,7 +39,7 @@ The shorter version `2024-01-01T23:42` should work also.
 
 ```HTML
 <countdown-timer 
-  date="2023-01-01T23:42:00.000+01:00">
+  date="2024-01-01T23:42:00.000+01:00">
 </countdown-timer>
 ```
 
@@ -56,7 +56,7 @@ date | ISO 8601 date for desired countdown target date
 
 ## Styling
 
-Variable |  Desciption or additional info | Default
+CSS-Variable |  Description or additional info | Default
 --- | --- | ---
 --cdt-digit-font-size | Size of the timer digits. Use `inherit` to inherit from parent element's font-size | 2rem
 --cdt-digit-font-family | On the demo page the counter used `monospace` family | inherit
