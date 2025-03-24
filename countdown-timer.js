@@ -84,6 +84,11 @@ class CountDownTimer extends HTMLElement {
           scale: 1;
         }
       }
+      @media (prefers-reduced-motion: reduce) {
+        .pulse {
+          animation-duration: 0s;
+        }
+      }
     `;
     shadow.appendChild(style);
     shadow.appendChild(this.element);
@@ -242,6 +247,8 @@ class CountDownTimerDigit extends HTMLElement {
         background-color: var(--cdt-digit-box-color, #111);
         border-radius: clamp(2px, .1em, 10px);
         position: relative;
+        min-width: var(--cdt-digit-box-min-width, fit-content);
+        text-align: center;
       }
       .current, .new {
         padding: .1em;
@@ -249,6 +256,7 @@ class CountDownTimerDigit extends HTMLElement {
       .new {
         position: absolute;
         left: 0;
+        right: 0;
         opacity: 0;
         tranform-origin: bottom center;
         transform: translateY(-40%) scale(.9, .2);
@@ -263,6 +271,11 @@ class CountDownTimerDigit extends HTMLElement {
         opacity: 1;
         transform: translateY(0);
         transition: .6s;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .flip .current, .flip .new {
+          transition: 0s;
+        }
       }
     `;
     shadow.appendChild(style);

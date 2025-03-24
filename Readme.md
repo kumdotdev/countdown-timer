@@ -12,18 +12,45 @@ Vanilla JS one-file Web Component dependency free and framework agnostic. No bui
 npm i @kumdotdev/countdown-timer
 ```
 
+## React/Next.js
+
+```jsx
+'use client';
+import { useEffect } from 'react';
+
+export const MyComponent = () => {
+  useEffect(() => {
+    import('@kumdotdev/countdown-timer/countdown-timer.js');
+    return () => {};
+  }, []);
+};
+
+return (
+  <>
+    <countdown-timer
+      date='2028-01-01T23:42:00.000+01:00'
+      alarm='86400'
+    ></countdown-timer>
+  </>
+);
+```
+
 ## Import
+
 ### CDN
+
 ```HTML
 <script async type="module" src="https://unpkg.com/@kumdotdev/countdown-timer/countdown-timer.js"></script>
 ```
 
 ### Local install
+
 ```HTML
 <script async type="module" src="/node_modules/@kumdotdev/countdown-timer/countdown-timer.js"></script>
 ```
 
 ### Import as module
+
 ```HTML
 <script type="module">
   import '/node_modules/@kumdotdev/countdown-timer/countdown-timer.js';
@@ -38,29 +65,44 @@ npm i @kumdotdev/countdown-timer
 The shorter version `2024-01-01T23:42` should work also.
 
 ```HTML
-<countdown-timer 
+<countdown-timer
   date="2024-01-01T23:42:00.000+01:00">
 </countdown-timer>
 ```
 
 ## Language support
 
-English, French and German provided. You can add more languages to `L10N` constant. Defaults to english language. 
+English, French and German provided. You can add more languages to `L10N` constant. Defaults to english language.
 
 ## Attributes
 
-Attribute |  Description
---- | ---
-alarm | [Optional] Time left in seconds to begin with pulsating the timer
-date | ISO 8601 date for desired countdown target date
+| Attribute | Description                                                       |
+| --------- | ----------------------------------------------------------------- |
+| alarm     | [Optional] Time left in seconds to begin with pulsating the timer |
+| date      | ISO 8601 date for desired countdown target date                   |
 
 ## Styling
 
-CSS-Variable |  Description or additional info | Default
---- | --- | ---
---cdt-digit-font-size | Size of the timer digits. Use `inherit` to inherit from parent element's font-size | 2rem
---cdt-digit-font-family | On the demo page the counter used `monospace` family | inherit
-normal--cdt-digit-font-weight | Another useful values could be `400` (normal) | 700
---cdt-digit-text-color | | #fefefe
---cdt-digit-box-color | You can set the box color to `transparent` to omit the colored digit box | #111
---cdt-label-font-size | The font size of the label beneath the digits | 0.75rem
+| CSS-Variable              | Description or additional info                                                     | Default     |
+| ------------------------- | ---------------------------------------------------------------------------------- | ----------- |
+| --cdt-digit-font-size     | Size of the timer digits. Use `inherit` to inherit from parent element's font-size | 2rem        |
+| --cdt-digit-font-family   | On the demo page the counter used `monospace` family                               | inherit     |
+| --cdt-digit-font-weight   | Another useful values could be `400` (normal)                                      | 700         |
+| --cdt-digit-text-color    |                                                                                    | #fefefe     |
+| --cdt-digit-box-color     | You can set the box color to `transparent` to omit the colored digit box           | #111        |
+| --cdt-digit-box-min-width | You can set the box min width. Useful when not using monspace font.                | fit-content |
+| --cdt-label-font-size     | The font size of the label beneath the digits                                      | 0.75rem     |
+
+### Defaults
+
+```css
+:root {
+  --cdt-digit-font-size: 2rem;
+  --cdt-digit-font-family: inherit;
+  --cdt-digit-font-weight: 700;
+  --cdt-digit-text-color: #fefefe;
+  --cdt-digit-box-color: #111;
+  --cdt-digit-box-min-width: fit-content;
+  --cdt-label-font-size: 0.75rem;
+}
+```
